@@ -17,9 +17,9 @@
 Команды для работы с Terraform упакованы в Makefile:
 
 ```bash
-make tf_init
-make tf_apply
-make tf_destroy
+make init
+make apply
+make destroy
 ```
 
 ## Структура проекта
@@ -29,7 +29,7 @@ make tf_destroy
 ├── README.md                       # Документация проекта
 ├── Makefile                        # Команды для управления инфраструктурой
 ├── check.sh                        # Скрипт для проверки
-└── infrastructure/                 # Директория с Terraform конфигурацией
+└── infra/                         # Директория с Terraform конфигурацией
     ├── main.tf                     # Основной файл с описанием ресурсов
     ├── variables.tf                # Определения переменных
     ├── outputs.tf                  # Выходные значения
@@ -51,7 +51,7 @@ make tf_destroy
 
 1. Скопируйте файл с примером переменных:
 ```bash
-cp infrastructure/terraform.tfvars.example infrastructure/terraform.tfvars
+cp infra/terraform.tfvars.example infra/terraform.tfvars
 ```
 
 2. Заполните переменные в файле `terraform.tfvars`:
@@ -66,12 +66,12 @@ cp infrastructure/terraform.tfvars.example infrastructure/terraform.tfvars
 
 1. Инициализация Terraform:
 ```bash
-make tf_init
+make init
 ```
 
 2. Применение конфигурации:
 ```bash
-make tf_apply
+make apply
 ```
 
 После успешного применения конфигурации, в выводе будут показаны:
@@ -94,7 +94,7 @@ ssh dataproc-master
 
 Для удаления всех созданных ресурсов выполните:
 ```bash
-make tf_destroy
+make destroy
 ```
 
 ## Дополнительная информация
