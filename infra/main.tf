@@ -56,6 +56,8 @@ resource "yandex_vpc_route_table" "route_table" {
   }
 }
 
+# https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_security_group_rule
+
 resource "yandex_vpc_security_group" "security_group" {
   name        = var.yc_security_group_name
   description = "Security group for Dataproc cluster"
@@ -119,7 +121,7 @@ resource "yandex_storage_bucket" "data_bucket" {
   force_destroy = true
 }
 
-# Dataproc ресурсы
+# Dataproc ресурсы https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/dataproc_cluster
 resource "yandex_dataproc_cluster" "dataproc_cluster" {
   depends_on  = [yandex_resourcemanager_folder_iam_member.sa_roles]
   bucket      = yandex_storage_bucket.data_bucket.bucket
