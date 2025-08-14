@@ -17,6 +17,7 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
+terraform.tfvars 
 
 # OS noise
 .DS_Store
